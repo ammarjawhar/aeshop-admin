@@ -1,9 +1,10 @@
 import './Addproduct.css';
 import uploadArea from '../../assets/upload_area.svg';
 import { useState } from 'react';
-import axois from 'axios';
+import axios from 'axios';
 const Addproduct = () => {
-  const BASE_URL = 'https://e-shop-backend-alpha.vercel.app';
+  const BASE_URL = 'https://eshop-apis.vercel.app';
+
   const [image, setImage] = useState(null);
   const [productData, setProductData] = useState({
     name: '',
@@ -23,12 +24,11 @@ const Addproduct = () => {
     let product = productData;
     const formData = new FormData();
     formData.append('product', image);
-    const response = await axois.post(`${BASE_URL}/upload`, formData);
+
+    const response = await axios.post(`${BASE_URL}/upload`, formData);
     if (response.data.success) {
       product.image = response.data.image_url;
-      await axois.post(`${BASE_URL}/api/product/add`, product, {
-        withCredentials: true,
-      });
+      await axios.post(`${BASE_URL}/api/product/add`, product);
       if (response.data.success) {
         alert('product added successfully');
       } else {
