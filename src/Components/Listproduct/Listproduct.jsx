@@ -3,7 +3,7 @@ import axois from 'axios';
 import { useEffect, useState } from 'react';
 
 const Listproduct = () => {
-  const BASE_URL = 'https://e-shop-backend-alpha.vercel.app/';
+  const BASE_URL = 'https://e-shop-backend-alpha.vercel.app';
   const [allProducts, setAllProducts] = useState([]);
   const fetchAllProducts = async () => {
     const response = await axois.get(`${BASE_URL}/api/product/list`);
