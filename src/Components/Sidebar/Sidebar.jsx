@@ -1,7 +1,5 @@
 import './Sidebar.css';
 import { Link } from 'react-router-dom';
-import addProducrt from '../../assets/product_cart.svg';
-import listProducrt from '../../assets/product_list_icon.svg';
 import { FaCartPlus } from 'react-icons/fa6';
 import { CiCircleList } from 'react-icons/ci';
 
