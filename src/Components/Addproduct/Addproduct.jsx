@@ -23,7 +23,7 @@ const Addproduct = () => {
     let product = productData;
     const formData = new FormData();
     formData.append('product', image);
-    const response = await axois.post(`${BASE_URL}/uplaod`, formData);
+    const response = await axois.post(`${BASE_URL}/upload`, formData);
     if (response.data.success) {
       product.image = response.data.image_url;
       await axois.post(`${BASE_URL}/api/product/add`, product, {
