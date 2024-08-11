@@ -3,7 +3,7 @@ import uploadArea from '../../assets/upload_area.svg';
 import { useState } from 'react';
 import axois from 'axios';
 const Addproduct = () => {
-  const BASE_URL = 'https://e-shop-backend-alpha.vercel.app/';
+  const BASE_URL = 'https://e-shop-backend-alpha.vercel.app';
   const [image, setImage] = useState(null);
   const [productData, setProductData] = useState({
     name: '',
