@@ -2,19 +2,23 @@ import './Sidebar.css';
 import { Link } from 'react-router-dom';
 import addProducrt from '../../assets/product_cart.svg';
 import listProducrt from '../../assets/product_list_icon.svg';
+import { FaCartPlus } from 'react-icons/fa6';
+import { CiCircleList } from 'react-icons/ci';
+
 const Sidbar = () => {
   return (
     <div className="sidebar">
       <Link to={'/addproduct'} style={{ textDecoration: 'none' }}>
         <div className="sidebar-item">
-          <img src={addProducrt} alt="" />
+          <FaCartPlus />
+
           <p>Add Product</p>
         </div>
       </Link>
-     
+
       <Link to={'/listproduct'} style={{ textDecoration: 'none' }}>
         <div className="sidebar-item">
-          <img src={listProducrt} alt="" />
+          <CiCircleList />
           <p>Product List</p>
         </div>
       </Link>
