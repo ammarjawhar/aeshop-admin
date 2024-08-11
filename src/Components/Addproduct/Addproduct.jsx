@@ -26,7 +26,9 @@ const Addproduct = () => {
     const response = await axois.post(`${BASE_URL}/uplaod`, formData);
     if (response.data.success) {
       product.image = response.data.image_url;
-      await axois.post(`${BASE_URL}/api/product/add`, product);
+      await axois.post(`${BASE_URL}/api/product/add`, product, {
+        withCredentials: true,
+      });
       if (response.data.success) {
         alert('product added successfully');
       } else {
